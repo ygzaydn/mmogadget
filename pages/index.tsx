@@ -29,7 +29,7 @@ const Home = () => {
     useEffect(() => {
         store.dispatch(getGames());
     }, []);
-
+    console.log(process.env.REACT_APP_KEY);
     return (
         <Layout>
             <main className="homepageContainer">
@@ -60,34 +60,97 @@ const Home = () => {
                         />
                     </div>
                 </div>
+                <div className="searchbar">
+                    <h4 className="searchbar--text">Filter Games</h4>
+                    <div className="flex">
+                        <div className="searchInput">
+                            <label
+                                className="searchInput--label"
+                                htmlFor="cars"
+                            >
+                                Choose a car:
+                            </label>
+                            <select
+                                name="cars"
+                                id="cars"
+                                className="searchbar--select"
+                            >
+                                <optgroup label="Select Platform">
+                                    <option value=""></option>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                </optgroup>
+                            </select>
+                        </div>
 
-                {selector?.map((el: IGames) => (
-                    <div
-                        key={el.title}
-                        style={{
-                            position: "relative",
-                        }}
-                    >
-                        <img
-                            src={el.thumbnail}
-                            alt={el.title + " thumbnail-img"}
+                        <div className="searchInput">
+                            <label
+                                className="searchInput--label"
+                                htmlFor="cars"
+                            >
+                                Choose a car:
+                            </label>
+                            <select
+                                name="cars"
+                                id="cars"
+                                className="searchbar--select"
+                            >
+                                <optgroup label="Select Platform">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div className="searchInput">
+                            <label
+                                className="searchInput--label"
+                                htmlFor="cars"
+                            >
+                                Choose a car:
+                            </label>
+                            <select
+                                name="cars"
+                                id="cars"
+                                className="searchbar--select"
+                            >
+                                <optgroup label="Select Platform">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {selector?.map((el: IGames) => (
+                        <div
+                            key={el.title}
                             style={{
-                                boxShadow:
-                                    "inset 0px -40px 5px 0px rgba(0,0,0,0.75)",
-                            }}
-                        />
-                        <p
-                            style={{
-                                position: "absolute",
-                                bottom: "5%",
-                                left: "2%",
-                                color: "orange",
+                                position: "relative",
                             }}
                         >
-                            {el.title}
-                        </p>
-                    </div>
-                ))}
+                            <img
+                                src={el.thumbnail}
+                                alt={el.title + " thumbnail-img"}
+                                style={{
+                                    boxShadow:
+                                        "inset 0px -40px 5px 0px rgba(0,0,0,0.75)",
+                                }}
+                            />
+                            <p
+                                style={{
+                                    position: "absolute",
+                                    bottom: "5%",
+                                    left: "2%",
+                                    color: "orange",
+                                }}
+                            >
+                                {el.title}
+                            </p>
+                        </div>
+                    ))}
+                </div>
             </main>
         </Layout>
     );

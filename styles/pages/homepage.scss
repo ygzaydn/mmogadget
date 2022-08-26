@@ -1,5 +1,6 @@
 .homepageContainer {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
@@ -44,4 +45,38 @@
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+.searchbar {
+    max-width: 1440px;
+    margin: 2rem auto;
+    z-index: 50;
+    background-color: $color-dark-2;
+    padding: 0.75rem 1rem;
+
+    &--text {
+        color: $color-light;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    &--select {
+        padding: 0.2rem;
+        margin: 0 1rem;
+    }
+}
+
+.searchInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    &--label {
+        color: $color-light;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.flex {
+    display: flex;
 }
