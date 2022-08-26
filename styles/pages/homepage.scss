@@ -1,0 +1,47 @@
+.homepageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.landingImage {
+    width: 100%;
+    max-height: 100vh;
+    -webkit-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+    box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+    position: relative;
+
+    &--image {
+        width: 100%;
+        filter: brightness(0.5);
+    }
+    &--text {
+        position: absolute;
+        font-family: "Rubik Dirt", cursive;
+        color: $color-light;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        font-size: 5rem;
+        text-align: center;
+        width: 60%;
+    }
+    &--gif {
+        position: relative;
+        width: 8rem;
+        cursor: pointer;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &--subtext {
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+    &--subdiv {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

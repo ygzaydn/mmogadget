@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "redux/store.js", "redux/actions.js", "redux/store.js", "redux/reducers/gamesSlice.js", "redux/types.js"],
   "exclude": ["node_modules"]
 }
