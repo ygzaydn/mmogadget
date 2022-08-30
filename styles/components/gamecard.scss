@@ -1,0 +1,23 @@
+.gamecard {
+  position: relative;
+  padding: 2rem 0.25rem 0 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    .gamecard--text {
+      font-size: 125%;
+    }
+  }
+  &--image {
+    box-shadow: inset 0px -40px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  &--text {
+    position: absolute;
+    bottom: 0;
+    color: orange;
+    width: 80%;
+    padding: 1rem 0.75rem;
+    background-color: $color-dark-2;
+    transition: all 0.4s;
+  }
+}

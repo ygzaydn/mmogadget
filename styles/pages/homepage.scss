@@ -1,82 +1,62 @@
 .homepageContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .landingImage {
+  width: 100%;
+  max-height: 100vh;
+  -webkit-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  position: relative;
+
+  &--image {
     width: 100%;
-    max-height: 100vh;
-    -webkit-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
-    -moz-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
-    box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+    filter: brightness(0.5);
+  }
+  &--text {
+    position: absolute;
+    font-family: "Rubik Dirt", cursive;
+    color: $color-light;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    font-size: 5rem;
+    text-align: center;
+    width: 60%;
+  }
+  &--gif {
     position: relative;
-
-    &--image {
-        width: 100%;
-        filter: brightness(0.5);
-    }
-    &--text {
-        position: absolute;
-        font-family: "Rubik Dirt", cursive;
-        color: $color-light;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-100%);
-        font-size: 5rem;
-        text-align: center;
-        width: 60%;
-    }
-    &--gif {
-        position: relative;
-        width: 8rem;
-        cursor: pointer;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    &--subtext {
-        color: white;
-        text-align: center;
-        width: 100%;
-    }
-    &--subdiv {
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-.searchbar {
-    max-width: 1440px;
-    margin: 2rem auto;
-    z-index: 50;
-    background-color: $color-dark-2;
-    padding: 0.75rem 1rem;
-
-    &--text {
-        color: $color-light;
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 1.5rem;
-    }
-    &--select {
-        padding: 0.2rem;
-        margin: 0 1rem;
-    }
-}
-
-.searchInput {
-    display: flex;
-    flex-direction: column;
-    justify-content: baseline;
-    &--label {
-        color: $color-light;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
+    width: 8rem;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &--subtext {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  &--subdiv {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .flex {
-    display: flex;
+  display: flex;
+}
+
+.gamesContainer {
+  margin: auto;
+  max-width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

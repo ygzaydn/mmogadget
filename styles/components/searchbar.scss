@@ -1,0 +1,54 @@
+.searchbar {
+  max-width: 1440px;
+  margin: 2rem auto;
+  z-index: 50;
+  background-color: $color-dark-2;
+  padding: 0.75rem 1rem;
+
+  &--text {
+    color: $color-light;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-family: "Rubik Dirt", cursive;
+  }
+  &--select {
+    padding: 0.2rem;
+    margin: 0 1rem;
+  }
+  &--button {
+    border: none;
+    padding: 0.8rem 3rem;
+    background-color: $color-secondary;
+    color: $color-light-1;
+    border-radius: 5px;
+    margin: 3rem auto 2rem auto;
+    font-family: inherit;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s;
+    &:hover {
+      font-size: 101%;
+      border: 0.5px solid $color-light;
+    }
+  }
+}
+
+.searchInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  &--label {
+    color: $color-light;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  & select {
+    border: none;
+    padding: 0.75rem 4rem;
+    font-family: inherit;
+  }
+}
