@@ -8,73 +8,108 @@ import { getGames } from "../redux/features/gamesSlice";
 import { Searchbar, Gamecard } from "../components";
 
 interface IGames {
-  id: number;
-  title: string;
-  thumbnail: string;
-  short_description: string;
-  game_url: string;
-  genre: string;
-  platform: string;
-  publisher: string;
-  developer: string;
-  release_date: string;
-  profile_url: string;
+    id: number;
+    title: string;
+    thumbnail: string;
+    short_description: string;
+    game_url: string;
+    genre: string;
+    platform: string;
+    publisher: string;
+    developer: string;
+    release_date: string;
+    profile_url: string;
 }
 
 interface state {
-  gamesState: IGames[];
+    gamesState: IGames[];
 }
 
 const Home = () => {
-  const [page, setPage] = useState(1);
-  const selector = useSelector((state: state) => state.gamesState);
+    const [page, setPage] = useState(1);
+    const selector = useSelector((state: state) => state.gamesState);
 
-  useEffect(() => {
-    store.dispatch(getGames());
-  }, []);
+    useEffect(() => {
+        store.dispatch(getGames());
+    }, []);
 
-  return (
-    <Layout>
-      <main className="homepageContainer">
-        <div className="landingImage">
-          <img
-            src="images/background.jpg"
-            alt="landingImage"
-            className="landingImage--image"
-          />
-          <h1 className="landingImage--text">Time to find MMO to play!</h1>
-          <div className="landingImage--subdiv">
-            <h5 className="landingImage--subtext">
-              MMO Gadget serves you free MMO games all around the world
-            </h5>
-            <img
-              src="images/scrolldown.gif"
-              alt="scrolldowngif"
-              className="landingImage--gif"
-              onClick={() =>
-                window.scrollTo({
-                  top: 400,
-                  behavior: "smooth",
-                })
-              }
-            />
-          </div>
-        </div>
+    const pageLimit = 40;
 
-        <Searchbar />
+    const handlePage = (num: number) => {
+        setPage(page + num);
+        window.scrollTo({
+            top: 800,
+            behavior: "smooth",
+        });
+    };
 
-        <div className="gamesContainer">
-          {selector?.slice((page - 1) * 30, page * 30).map((el: IGames) => (
-            <Gamecard
-              title={el.title}
-              thumbnail={el.thumbnail}
-              key={el.title}
-            />
-          ))}
-        </div>
-      </main>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <main className="homepageContainer">
+                <div className="landingImage">
+                    <img
+                        src="images/background.jpg"
+                        alt="landingImage"
+                        className="landingImage--image"
+                    />
+                    <h1 className="landingImage--text">
+                        Time to find MMO to play!
+                    </h1>
+                    <div className="landingImage--subdiv">
+                        <h5 className="landingImage--subtext">
+                            MMO Gadget serves you free MMO games all around the
+                            world
+                        </h5>
+                        <img
+                            src="images/scrolldown.gif"
+                            alt="scrolldowngif"
+                            className="landingImage--gif"
+                            onClick={() =>
+                                window.scrollTo({
+                                    top: 400,
+                                    behavior: "smooth",
+                                })
+                            }
+                        />
+                    </div>
+                </div>
+
+                <Searchbar setPage={setPage} />
+
+                <div className="gamesContainer">
+                    {selector
+                        ?.slice((page - 1) * pageLimit, page * pageLimit)
+                        .map((el: IGames) => (
+                            <Gamecard
+                                title={el.title}
+                                thumbnail={el.thumbnail}
+                                key={el.title}
+                                platform={el.platform}
+                                genre={el.genre}
+                            />
+                        ))}
+                </div>
+
+                <div className="pagesContainer">
+                    <span
+                        className="pagesContainer--button"
+                        onClick={() => page > 1 && handlePage(-1)}
+                    >
+                        {"<"}
+                    </span>
+                    <span className="pagesContainer--page">{page}</span>
+                    <span
+                        className="pagesContainer--button"
+                        onClick={() =>
+                            selector.length / pageLimit > page && handlePage(+1)
+                        }
+                    >
+                        {">"}
+                    </span>
+                </div>
+            </main>
+        </Layout>
+    );
 };
 
 export default Home;

@@ -6,9 +6,8 @@ interface ILayout {
 
 const Layout = ({ children }: ILayout) => {
     return (
-        <div>
+        <>
             <Head>
-                {" "}
                 <title>MMO Gadget</title>
                 <meta
                     name="description"
@@ -16,7 +15,7 @@ const Layout = ({ children }: ILayout) => {
                 />
             </Head>
             <main>{children}</main>
-        </div>
+        </>
     );
 };
 

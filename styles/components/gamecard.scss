@@ -1,23 +1,39 @@
 .gamecard {
-  position: relative;
-  padding: 2rem 0.25rem 0 0.25rem;
-  cursor: pointer;
+    position: relative;
+    padding: 2rem 0.25rem 0 0.25rem;
+    cursor: pointer;
+    height: 13rem;
+    width: 22.6rem;
 
-  &:hover {
-    .gamecard--text {
-      font-size: 125%;
+    &:hover {
+        .gamecard--text {
+            font-size: 125%;
+        }
     }
-  }
-  &--image {
-    box-shadow: inset 0px -40px 5px 0px rgba(0, 0, 0, 0.75);
-  }
-  &--text {
-    position: absolute;
-    bottom: 0;
-    color: orange;
-    width: 80%;
-    padding: 1rem 0.75rem;
-    background-color: $color-dark-2;
-    transition: all 0.4s;
-  }
+    &--image {
+        box-shadow: inset 0px -40px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    &--text {
+        position: absolute;
+        bottom: 0;
+        color: orange;
+        width: 80%;
+        padding: 1rem 0.75rem;
+        background-color: $color-dark-2;
+        transition: all 0.4s;
+    }
+    &--info {
+        position: absolute;
+        top: 2rem;
+        right: 0;
+        color: orange;
+        padding: 0.75rem;
+        background-color: $color-dark-1;
+        text-align: end;
+    }
+    &--logo {
+        width: 1.25rem;
+        height: 1.25rem;
+        filter: invert(1);
+    }
 }
