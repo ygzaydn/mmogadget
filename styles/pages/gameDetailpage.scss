@@ -1,18 +1,59 @@
 .gameDetail {
-    background-color: $color-primary-2;
+    background-color: $color-dark-2;
     margin: auto;
     max-width: 90rem;
-    height: 60rem;
     display: flex;
+    background-color: $color-primary-1;
     &--leftGrid {
         padding: 2rem 4rem;
         display: flex;
         flex-direction: column;
+        position: sticky;
+        top: 5%;
+        left: 0;
+        background-color: $color-dark-2;
+        margin: 2rem;
+        height: fit-content;
+    }
+    &--rightGrid {
+        width: 100%;
+        margin: 10rem 4rem;
+    }
+    &--title {
+        color: orange;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    &--navigationBar {
+        span {
+            margin: 0 0.5rem;
+            color: $color-light;
+        }
+        a {
+            text-decoration: none;
+            color: orange;
+            font-weight: 500;
+            transition: all 0.4s;
+            &:hover {
+                color: $color-light;
+            }
+        }
     }
     &--thumbnail {
         margin: auto;
         margin: 2rem 0;
         align-self: center;
+    }
+    &--description {
+        color: $color-light;
+
+        line-height: 1.75rem;
+        & p {
+            margin: 1.5rem 0;
+        }
+        & p::first-letter {
+            margin-left: 1rem;
+        }
     }
     &--minimumSpec {
         display: flex;
@@ -53,6 +94,23 @@
                 margin: 0.5rem auto;
             }
         }
+    }
+    &--additionalInfo {
+        color: $color-light-2;
+        & div {
+            margin: 0.75rem 0;
+        }
+    }
+    &--imageDiv {
+        display: flex;
+        margin: 2rem;
+        padding: 1rem 2rem;
+    }
+    &--image {
+        height: 8rem;
+        margin: 0 0.2rem;
+        width: auto;
+        cursor: pointer;
     }
 }
 

@@ -9,6 +9,7 @@ import {
 import { store } from "../../redux/store";
 import { useEffect } from "react";
 import { SystemRequirements, Platform } from "../../components";
+import Link from "next/link";
 
 interface IGames {
     id: number;
@@ -30,7 +31,10 @@ interface IGames {
         processor: string;
         storage: string;
     };
-    screenshots: object[];
+    screenshots: {
+        id: number;
+        image: string;
+    }[];
     status: string;
 }
 
@@ -57,6 +61,11 @@ const GameDetails = (game: { game: IGames }) => {
         <Layout>
             <section className="gameDetail">
                 <div className="gameDetail--leftGrid">
+                    <div className="gameDetail--navigationBar">
+                        <Link href="/">Home</Link>
+                        <span>{">"}</span>
+                        <Link href="#">{title}</Link>
+                    </div>
                     <img
                         src={thumbnail}
                         alt={`${title}-thumbnail`}
@@ -84,8 +93,39 @@ const GameDetails = (game: { game: IGames }) => {
                             <Platform platform={platform} />
                         </span>
                     </div>
+
+                    <div className="gameDetail--additionalInfo">
+                        <div>
+                            <span className="white">Status:</span>
+                            <span> {status}</span>
+                        </div>
+                        <div>
+                            <span className="white">Release Date:</span>
+                            <span> {release_date}</span>
+                        </div>
+                        <div className="gameDetail--navigationBar">
+                            <Link href={profile_url}>Game Website</Link>
+                        </div>
+                    </div>
                 </div>
-                <div className="gameDetail--rightGrid"></div>
+                <div className="gameDetail--rightGrid">
+                    <p className="gameDetail--title">{title}</p>
+                    <div
+                        className="gameDetail--description"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    ></div>
+                    <p className="gameDetail--title">Screenshots</p>
+                    <div className="gameDetail--imagediv">
+                        {screenshots.map((el) => (
+                            <img
+                                className="gameDetail--image"
+                                src={el.image}
+                                alt={`${title}-${el.id}`}
+                                key={el.id}
+                            />
+                        ))}
+                    </div>
+                </div>
             </section>
         </Layout>
     );
