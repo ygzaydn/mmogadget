@@ -61,7 +61,7 @@ const Gamecard = ({
                         )}
                     </span>
                     <span className="gamecard--button">
-                        <Link href={`game/${id}`}>Details</Link>
+                        <Link href={`/game/${id}`}>Details</Link>
                     </span>
                 </div>
             </div>
