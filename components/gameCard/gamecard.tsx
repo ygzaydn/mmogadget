@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+
 interface IGamecard {
     title: string;
     thumbnail: string;
@@ -6,6 +8,7 @@ interface IGamecard {
     genre: string;
     developer: string;
     description: string;
+    id: number;
 }
 
 const Gamecard = ({
@@ -15,6 +18,7 @@ const Gamecard = ({
     genre,
     developer,
     description,
+    id,
 }: IGamecard) => {
     return (
         <div key={title} className="gamecard">
@@ -29,8 +33,8 @@ const Gamecard = ({
                 </span>
                 <span>
                     <p className="gamecard--description">
-                        {description.slice(0, 150)}
-                        {description.length > 150 && "..."}
+                        {description?.slice(0, 150)}
+                        {description?.length > 150 && "..."}
                     </p>
                 </span>
                 <div className="gamecard__subdiv">
@@ -56,8 +60,9 @@ const Gamecard = ({
                             />
                         )}
                     </span>
-
-                    <button className="gamecard--button">Details</button>
+                    <span className="gamecard--button">
+                        <Link href={`game/${id}`}>Details</Link>
+                    </span>
                 </div>
             </div>
         </div>

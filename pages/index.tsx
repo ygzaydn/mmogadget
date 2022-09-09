@@ -89,6 +89,7 @@ const Home = () => {
                                 genre={el.genre}
                                 developer={el.developer}
                                 description={el.short_description}
+                                id={el.id}
                             />
                         ))}
                 </div>
