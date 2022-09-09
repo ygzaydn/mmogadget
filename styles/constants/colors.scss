@@ -14,7 +14,15 @@ $color-light: #f5f2e7;
 $color-light-1: #f5f2e7ee;
 $color-light-2: #f5f2e7bb;
 
+$color-orange: orange;
+
 html,
 body {
-  background-color: #0d0d0d;
+    background-color: black;
+    @media screen and (max-width: 1000px) {
+        font-size: 85%;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 70%;
+    }
 }

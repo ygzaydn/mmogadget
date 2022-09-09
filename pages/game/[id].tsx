@@ -56,6 +56,7 @@ const GameDetails = (game: { game: IGames }) => {
         status,
         title,
         thumbnail,
+        genre,
     } = game.game;
     return (
         <Layout>
@@ -71,7 +72,9 @@ const GameDetails = (game: { game: IGames }) => {
                         alt={`${title}-thumbnail`}
                         className="gameDetail--thumbnail"
                     />
-
+                    <div className="gameDetail--genre">
+                        <p className="gamecard--genre">{genre}</p>
+                    </div>
                     {minimum_system_requirements && (
                         <SystemRequirements
                             systemReq={minimum_system_requirements}

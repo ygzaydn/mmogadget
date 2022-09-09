@@ -1,9 +1,8 @@
 .gameDetail {
-    background-color: $color-dark-2;
     margin: auto;
     max-width: 90rem;
     display: flex;
-    background-color: $color-primary-1;
+
     &--leftGrid {
         padding: 2rem 4rem;
         display: flex;
@@ -17,10 +16,16 @@
     }
     &--rightGrid {
         width: 100%;
-        margin: 10rem 4rem;
+        margin: 4rem 4rem 10rem 4rem;
+    }
+    &--genre {
+        margin: 0 0 1rem 0;
+        & p {
+            width: fit-content;
+        }
     }
     &--title {
-        color: orange;
+        color: $color-secondary;
         font-size: 2rem;
         margin-bottom: 2rem;
     }
@@ -31,7 +36,7 @@
         }
         a {
             text-decoration: none;
-            color: orange;
+            color: $color-secondary;
             font-weight: 500;
             transition: all 0.4s;
             &:hover {
