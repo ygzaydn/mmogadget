@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Layout from "../components/layout/layout";
 
 import { useEffect, useState } from "react";
@@ -33,7 +34,7 @@ const Home = () => {
         store.dispatch(getGames());
     }, []);
 
-    const pageLimit = 40;
+    const pageLimit = 10;
 
     const handlePage = (num: number) => {
         setPage(page + num);
@@ -86,6 +87,8 @@ const Home = () => {
                                 key={el.title}
                                 platform={el.platform}
                                 genre={el.genre}
+                                developer={el.developer}
+                                description={el.short_description}
                             />
                         ))}
                 </div>

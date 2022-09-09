@@ -55,7 +55,7 @@
 
 .gamesContainer {
     margin: 5rem auto;
-    max-width: 90vw;
+    max-width: 1900px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -73,6 +73,7 @@
         margin: 0 0.5rem;
         cursor: pointer;
         padding: 0 0.5rem;
+
         &:hover {
             color: $color-dark;
         }
