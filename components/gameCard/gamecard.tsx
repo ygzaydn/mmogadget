@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { Platform } from "../";
 
 interface IGamecard {
     title: string;
@@ -45,20 +46,7 @@ const Gamecard = ({
                         <p className="gamecard--developer">{developer}</p>
                     </span>
                     <span className="gamecard--info">
-                        {platform?.includes("Windows") && (
-                            <img
-                                src="/logos/windows.svg"
-                                alt="windows-logo"
-                                className="gamecard--logo"
-                            />
-                        )}
-                        {platform?.includes("Web Browser") && (
-                            <img
-                                src="/logos/browser.svg"
-                                alt="browser-logo"
-                                className="gamecard--logo"
-                            />
-                        )}
+                        <Platform platform={platform} />
                     </span>
                     <span className="gamecard--button">
                         <Link href={`/game/${id}`}>Details</Link>

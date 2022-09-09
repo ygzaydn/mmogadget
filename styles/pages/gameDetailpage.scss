@@ -1,0 +1,69 @@
+.gameDetail {
+    background-color: $color-primary-2;
+    margin: auto;
+    max-width: 90rem;
+    height: 60rem;
+    display: flex;
+    &--leftGrid {
+        padding: 2rem 4rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &--thumbnail {
+        margin: auto;
+        margin: 2rem 0;
+        align-self: center;
+    }
+    &--minimumSpec {
+        display: flex;
+        flex-direction: column;
+        color: $color-light-2;
+        background-color: $color-dark-2;
+        padding: 0.4rem 0.8rem;
+
+        &--title {
+            color: $color-light-1;
+            text-align: start;
+            padding: 1rem 0 2rem 0;
+        }
+        &--spec {
+            display: flex;
+            flex-direction: column;
+            & span {
+                display: flex;
+                justify-content: space-between;
+                margin: 0.5rem 0;
+                & p {
+                    margin: 0 1.5rem;
+                }
+            }
+        }
+    }
+    &--platform {
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem 0;
+        color: $color-light-1;
+        & span {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: space-between;
+            & p {
+                margin: 0.5rem auto;
+            }
+        }
+    }
+}
+
+.end {
+    text-align: end;
+}
+
+.white {
+    color: $color-light;
+}
+
+.center {
+    text-align: center;
+}
