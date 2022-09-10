@@ -1,0 +1,45 @@
+.giveawayContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.giveawayItem {
+    background-color: $color-primary-2;
+    max-width: 20rem;
+    padding: 1.2rem;
+    margin: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & img {
+        margin: 0 0 2rem 0;
+    }
+    & p {
+        color: $color-light-2;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    &--title {
+        color: $color-light;
+        margin: 0 0 2rem 0 !important;
+        text-align: center;
+        font-size: 1.15rem !important;
+    }
+    & a {
+        border: none;
+        padding: 0.8rem 3rem;
+        background-color: $color-secondary;
+        color: $color-light-1;
+        border: 0.5px solid $color-secondary;
+        border-radius: 5px;
+        margin: 0 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-decoration: none;
+        &:hover {
+            border: 0.5px solid $color-light;
+        }
+    }
+}

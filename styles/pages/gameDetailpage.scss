@@ -2,6 +2,9 @@
     margin: auto;
     max-width: 90rem;
     display: flex;
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
 
     &--leftGrid {
         padding: 2rem 4rem;
@@ -13,15 +16,35 @@
         background-color: $color-dark-2;
         margin: 2rem;
         height: fit-content;
+        @media screen and (max-width: 900px) {
+            position: inherit;
+            margin: 2rem auto;
+        }
+    }
+    &--additionalGrid {
+        @media screen and (max-width: 900px) {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+        }
     }
     &--rightGrid {
         width: 100%;
         margin: 4rem 4rem 10rem 4rem;
+        @media screen and (max-width: 900px) {
+            width: auto;
+        }
     }
     &--genre {
         margin: 0 0 1rem 0;
         & p {
             width: fit-content;
+        }
+        @media screen and (max-width: 900px) {
+            align-self: center;
         }
     }
     &--title {
@@ -42,6 +65,9 @@
             &:hover {
                 color: $color-light;
             }
+            @media screen and (max-width: 900px) {
+                font-size: 1.25rem;
+            }
         }
     }
     &--thumbnail {
@@ -59,6 +85,9 @@
         & p::first-letter {
             margin-left: 1rem;
         }
+        @media screen and (max-width: 900px) {
+            font-size: 1.15rem;
+        }
     }
     &--minimumSpec {
         display: flex;
@@ -66,6 +95,10 @@
         color: $color-light-2;
         background-color: $color-dark-2;
         padding: 0.4rem 0.8rem;
+        @media screen and (max-width: 900px) {
+            max-width: 80vw;
+            align-self: center;
+        }
 
         &--title {
             color: $color-light-1;
@@ -90,6 +123,7 @@
         justify-content: space-around;
         margin: 2rem 0;
         color: $color-light-1;
+        min-width: 20rem;
         & span {
             display: flex;
             flex-direction: column;
@@ -116,6 +150,10 @@
         margin: 0 0.2rem;
         width: auto;
         cursor: pointer;
+        @media screen and (max-width: 900px) {
+            width: 25vw;
+            height: auto;
+        }
     }
 }
 

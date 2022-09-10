@@ -41,10 +41,13 @@ const Searchbar = ({ setPage }: any) => {
                     val={category}
                     changeFunc={setCategory}
                 />
+                <button
+                    className="searchbar--button"
+                    onClick={() => searchGames()}
+                >
+                    Search for it
+                </button>
             </div>
-            <button className="searchbar--button" onClick={() => searchGames()}>
-                Search for it
-            </button>
         </div>
     );
 };

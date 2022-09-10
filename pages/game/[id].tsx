@@ -80,34 +80,35 @@ const GameDetails = (game: { game: IGames }) => {
                             systemReq={minimum_system_requirements}
                         />
                     )}
+                    <div className="gameDetail--additionalGrid">
+                        <div className="gameDetail--platform">
+                            <span>
+                                <p>Publisher </p>
+                                <p className="white"> {publisher}</p>
+                            </span>
 
-                    <div className="gameDetail--platform">
-                        <span>
-                            <p>Publisher </p>
-                            <p className="white"> {publisher}</p>
-                        </span>
-
-                        <span>
-                            <p>Developer </p>
-                            <p className="white"> {developer}</p>
-                        </span>
-                        <span>
-                            <p>Platform</p>
-                            <Platform platform={platform} />
-                        </span>
-                    </div>
-
-                    <div className="gameDetail--additionalInfo">
-                        <div>
-                            <span className="white">Status:</span>
-                            <span> {status}</span>
+                            <span>
+                                <p>Developer </p>
+                                <p className="white"> {developer}</p>
+                            </span>
+                            <span>
+                                <p>Platform</p>
+                                <Platform platform={platform} />
+                            </span>
                         </div>
-                        <div>
-                            <span className="white">Release Date:</span>
-                            <span> {release_date}</span>
-                        </div>
-                        <div className="gameDetail--navigationBar">
-                            <Link href={profile_url}>Game Website</Link>
+
+                        <div className="gameDetail--additionalInfo">
+                            <div>
+                                <span className="white">Status:</span>
+                                <span> {status}</span>
+                            </div>
+                            <div>
+                                <span className="white">Release Date:</span>
+                                <span> {release_date}</span>
+                            </div>
+                            <div className="gameDetail--navigationBar">
+                                <Link href={profile_url}>Game Website</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

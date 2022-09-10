@@ -5,6 +5,12 @@
     width: 55rem;
     height: 15rem;
 
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+        height: auto;
+        width: 20rem;
+    }
+
     &__contentdiv {
         height: 100%;
         display: flex;
@@ -23,6 +29,9 @@
         box-shadow: inset 0px -40px 5px 0px rgba(0, 0, 0, 0.75);
         cursor: pointer;
         min-width: 25rem;
+        @media screen and (max-width: 750px) {
+            min-width: 0;
+        }
     }
 
     &--text {

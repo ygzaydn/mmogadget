@@ -26,6 +26,14 @@
         font-size: 5rem;
         text-align: center;
         width: 60%;
+        @media screen and (max-width: 900px) {
+            width: 90%;
+            top: 60%;
+        }
+        @media screen and (max-width: 500px) {
+            width: 90%;
+            top: 80%;
+        }
     }
     &--gif {
         position: relative;
@@ -33,6 +41,9 @@
         cursor: pointer;
         left: 50%;
         transform: translateX(-50%);
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
     }
     &--subtext {
         color: white;
@@ -40,6 +51,9 @@
         width: 100%;
         margin-bottom: 2rem;
         font-size: 2rem;
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
     }
     &--subdiv {
         position: absolute;
@@ -51,10 +65,13 @@
 
 .flex {
     display: flex;
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
 }
 
 .gamesContainer {
-    margin: 5rem auto;
+    margin: 0 auto 5rem auto;
     max-width: 1900px;
     display: flex;
     flex-wrap: wrap;
@@ -81,5 +98,27 @@
     &--page {
         padding: 0 0.5rem;
         margin: 0 0.5rem;
+    }
+}
+.buttonContainer {
+    display: flex;
+    max-width: 1440px;
+    margin: 2rem auto 0 auto;
+    justify-content: space-between;
+    & a {
+        border: none;
+        padding: 0.8rem 3rem;
+        background-color: $color-secondary;
+        color: $color-light-1;
+        border: 0.5px solid $color-secondary;
+        border-radius: 5px;
+        margin: 0 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.4s;
+        text-decoration: none;
+        &:hover {
+            border: 0.5px solid $color-light;
+        }
     }
 }

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { getGames } from "../redux/features/gamesSlice";
 
 import { Searchbar, Gamecard } from "../components";
+import Link from "next/link";
 
 interface IGames {
     id: number;
@@ -77,6 +78,14 @@ const Home = () => {
 
                 <Searchbar setPage={setPage} />
 
+                <div className="buttonContainer">
+                    <Link href="/giveaways" className="button">
+                        Latest MMO Giveaways
+                    </Link>
+                    <Link href="/news" className="button">
+                        Latest MMO News
+                    </Link>
+                </div>
                 <div className="gamesContainer">
                     {selector
                         ?.slice((page - 1) * pageLimit, page * pageLimit)

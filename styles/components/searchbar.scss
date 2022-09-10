@@ -4,7 +4,9 @@
     z-index: 50;
     background-color: $color-dark-2;
     padding: 0.75rem 1rem;
-
+    @media screen and (max-width: 900px) {
+        margin: 0;
+    }
     &--text {
         color: $color-light;
         text-align: center;
@@ -26,9 +28,6 @@
         margin: 3rem auto 2rem auto;
         font-family: inherit;
         cursor: pointer;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
         transition: all 0.4s;
         &:hover {
             border: 0.5px solid $color-light;
@@ -44,7 +43,7 @@
         color: $color-light;
         text-align: center;
         font-size: 1.25rem;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
     }
     & select {
         border: none;
