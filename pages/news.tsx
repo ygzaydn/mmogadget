@@ -2,26 +2,26 @@
 import Layout from "../components/layout/layout";
 
 import { wrapper } from "../redux/store";
-import { getGiveaways, giveawaySlice } from "../redux/features/giveawaySlice";
+import { getNews, newsSlice } from "../redux/features/newsSlice";
 import { store } from "../redux/store";
 import { useEffect } from "react";
 
 import Link from "next/link";
 
-interface IGiveaway {
+interface INews {
     id: number;
     title: string;
-    keys_left: string;
+    short_description: string;
     thumbnail: string;
     main_image: string;
-    short_description: string;
-    giveaway_url: string;
+    article_content: string;
+    article_url: string;
 }
 
-const Giveaway = (giveaway: { giveaway: IGiveaway[] }) => {
+const Giveaway = (news: { news: INews[] }) => {
     useEffect(() => {
-        store.dispatch(giveawaySlice.actions.getGiveaway(giveaway.giveaway));
-    }, [giveaway]);
+        store.dispatch(newsSlice.actions.getNews(news.news));
+    }, [news]);
 
     return (
         <Layout>
@@ -29,22 +29,22 @@ const Giveaway = (giveaway: { giveaway: IGiveaway[] }) => {
                 <div className="gameDetail--navigationBar giveaway--navbar">
                     <Link href="/">Home</Link>
                     <span>{">"}</span>
-                    <Link href="#">Giveaways</Link>
+                    <Link href="#">News</Link>
                 </div>
-                <h4 className="giveaway--title">Giveaways</h4>
+                <h4 className="giveaway--title">Latest MMO News</h4>
                 <h5 className="giveaway--text">
-                    You can find giveaways here, click link to obtain gift. They
-                    {"'"}re all free.
+                    You can find the latest MMO news here, click links to deep
+                    into details.
                 </h5>
                 <div className="giveaway--container">
-                    {giveaway?.giveaway?.map((el) => (
+                    {news?.news?.map((el) => (
                         <div className="giveawayItem" key={el.id}>
                             <img src={el.thumbnail} alt={el.title} />
                             <p className="giveawayItem--title">{el.title}</p>
                             <p className="giveawayItem--description">
                                 {el.short_description}
                             </p>
-                            <Link href={el.giveaway_url}>Obtain gift</Link>
+                            <Link href={el.article_url}>Read More</Link>
                         </div>
                     ))}
                 </div>
@@ -59,11 +59,11 @@ export const getServerSideProps = wrapper.getServerSideProps(
     (store) => async () => {
         // we can set the initial state from here
         // we are setting to false but you can run your custom logic here
-        const res = await store.dispatch(getGiveaways());
+        const res = await store.dispatch(getNews());
 
         return {
             props: {
-                giveaway: res.payload,
+                news: res.payload,
             },
         };
     }

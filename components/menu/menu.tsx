@@ -12,16 +12,26 @@ const Menu = () => {
                 setToggle(false);
             }
         });
+
+        return () =>
+            element?.removeEventListener("click", (event) => {
+                const target = event.target as HTMLElement;
+                if (!target.className.includes("menu")) {
+                    setToggle(false);
+                }
+            });
     }, []);
 
     return (
         <nav className={toggle ? "menu menu--shift" : "menu"}>
-            <img
-                src="/logos/menu.svg"
-                alt="menu-icon"
-                className="menu--image"
-                onClick={() => setToggle(!toggle)}
-            />
+            <div>
+                <img
+                    src="/logos/menu.svg"
+                    alt="menu-icon"
+                    className="menu--image"
+                    onClick={() => setToggle(!toggle)}
+                />
+            </div>
             <ul className="menu--container">
                 <Link href="/">Home</Link>
                 <Link href="/giveaways">Giveaways</Link>

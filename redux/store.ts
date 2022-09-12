@@ -6,12 +6,14 @@ import logger from "redux-logger";
 import gamesReducer from "./features/gamesSlice";
 import gamesDetailReducer from "./features/gameDetailsSlice";
 import giveawayReducer from "./features/giveawaySlice";
+import newsReducer from "./features/newsSlice";
 
 export const store = configureStore({
     reducer: {
         gamesState: gamesReducer,
         gameState: gamesDetailReducer,
         giveawayState: giveawayReducer,
+        newsState: newsReducer,
     },
 
     middleware: (getDefaultMiddleware) =>

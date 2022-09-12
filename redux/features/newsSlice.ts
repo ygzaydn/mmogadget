@@ -4,28 +4,25 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = [{}];
 
-export const getGiveaways = createAsyncThunk(
-    "giveaways/getGiveaways",
-    async () => {
-        const response = await axios.get(
-            "https://mmo-games.p.rapidapi.com/giveaways"
-        );
+export const getNews = createAsyncThunk("news/getNews", async () => {
+    const response = await axios.get(
+        "https://mmo-games.p.rapidapi.com/latestnews"
+    );
 
-        return response.data;
-    }
-);
+    return response.data;
+});
 
-export const giveawaySlice = createSlice({
-    name: "giveaways",
+export const newsSlice = createSlice({
+    name: "news",
     initialState,
     reducers: {
-        getGiveaway(state, action: PayloadAction<object[]>) {
+        getNews(state, action: PayloadAction<object[]>) {
             state = action.payload;
             return state;
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(getGiveaways.fulfilled, (state, action) => {
+        builder.addCase(getNews.fulfilled, (state, action) => {
             state = action.payload;
             return state;
         });
@@ -34,4 +31,4 @@ export const giveawaySlice = createSlice({
 
 //export const { searchGames, getGames } = gamesSlice.actions;
 
-export default giveawaySlice.reducer;
+export default newsSlice.reducer;
