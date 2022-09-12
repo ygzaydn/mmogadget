@@ -44,7 +44,7 @@ const Giveaway = (news: { news: INews[] }) => {
                             <p className="giveawayItem--description">
                                 {el.short_description}
                             </p>
-                            <Link href={el.article_url}>Read More</Link>
+                            <Link href={`/news/${el.id}`}>Read More</Link>
                         </div>
                     ))}
                 </div>
