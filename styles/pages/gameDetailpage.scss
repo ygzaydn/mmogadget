@@ -88,6 +88,9 @@
         @media screen and (max-width: 900px) {
             font-size: 1.15rem;
         }
+        & a {
+            color: $color-secondary;
+        }
     }
     &--minimumSpec {
         display: flex;

@@ -2,9 +2,7 @@
 import Layout from "../../components/layout/layout";
 
 import { wrapper } from "../../redux/store";
-import { newsSlice, getNews } from "../../redux/features/newsSlice";
-import { store } from "../../redux/store";
-import { useEffect } from "react";
+import { getNews } from "../../redux/features/newsSlice";
 
 import Link from "next/link";
 
@@ -19,7 +17,6 @@ interface INews {
 }
 
 const GameDetails = (news: { news: INews }) => {
-    console.log(news.news);
     return (
         <Layout>
             <section className="gameDetail">
