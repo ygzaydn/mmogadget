@@ -28,11 +28,13 @@
         flex-direction: column;
 
         width: 10rem;
-        & li {
+        & a {
+            text-decoration: none;
             padding: 1rem 2rem;
             cursor: pointer;
             transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.4s;
             font-size: 1rem;
+            color: $color-light;
             &:hover {
                 background-color: $color-light;
                 color: $color-secondary;
