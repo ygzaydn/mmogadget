@@ -39,7 +39,13 @@ const Giveaway = (giveaway: { giveaway: IGiveaway[] }) => {
                 <div className="giveaway--container">
                     {giveaway?.giveaway?.map((el) => (
                         <div className="giveawayItem" key={el.id}>
-                            <img src={el.thumbnail} alt={el.title} />
+                            <img
+                                src={el.thumbnail}
+                                alt={el.title}
+                                onClick={() =>
+                                    (window.location.href = el.giveaway_url)
+                                }
+                            />
                             <p className="giveawayItem--title">{el.title}</p>
                             <p className="giveawayItem--description">
                                 {el.short_description}

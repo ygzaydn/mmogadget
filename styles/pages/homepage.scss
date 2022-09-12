@@ -26,6 +26,7 @@
         font-size: 5rem;
         text-align: center;
         width: 60%;
+        height: 10rem;
         @media screen and (max-width: 900px) {
             width: 90%;
             top: 60%;
@@ -37,7 +38,7 @@
     }
     &--gif {
         position: relative;
-        width: 8rem;
+        height: 6rem;
         cursor: pointer;
         left: 50%;
         transform: translateX(-50%);
@@ -118,6 +119,7 @@
         transition: all 0.4s;
         font-size: 1rem;
         text-decoration: none;
+        text-align: center;
         &:hover {
             border: 0.5px solid $color-light;
         }

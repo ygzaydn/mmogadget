@@ -27,6 +27,7 @@ const Gamecard = ({
                 src={thumbnail}
                 alt={title + " thumbnail-img"}
                 className="gamecard--image"
+                onClick={() => (window.location.pathname = `game/${id}`)}
             />
             <div className="gamecard__contentdiv">
                 <span>

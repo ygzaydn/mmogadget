@@ -21,30 +21,31 @@
     }
     &__subdiv {
         display: flex;
-        padding-bottom: 0.5rem;
         align-items: center;
         width: 100%;
+        padding: 0 0.5rem 0.5rem 0.5rem;
     }
     &--image {
         box-shadow: inset 0px -40px 5px 0px rgba(0, 0, 0, 0.75);
         cursor: pointer;
-        min-width: 25rem;
+        min-width: 23rem;
         @media screen and (max-width: 750px) {
             min-width: 0;
+            height: 12rem;
         }
     }
 
     &--text {
         color: $color-secondary;
-        padding: 3rem 1.5rem 1rem 1.5rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
         transition: all 0.4s;
         font-size: 1.25rem;
     }
     &--genre {
-        padding: 0.5rem;
+        padding: 0.4rem;
         background-color: $color-light-1;
         font-size: 0.75rem;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
     }
     &--description {
         padding: 0.25rem 1.5rem;

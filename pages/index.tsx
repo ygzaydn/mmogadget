@@ -50,7 +50,7 @@ const Home = () => {
             <main className="homepageContainer">
                 <div className="landingImage">
                     <img
-                        src="images/background.jpg"
+                        src="images/background.webp"
                         alt="landingImage"
                         className="landingImage--image"
                     />
