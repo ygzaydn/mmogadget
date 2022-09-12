@@ -26,6 +26,7 @@ const Giveaway = (giveaway: { giveaway: IGiveaway[] }) => {
     return (
         <Layout>
             <section className="giveawayContainer">
+                <h4>Giveaways</h4>
                 {giveaway?.giveaway?.map((el) => (
                     <div className="giveawayItem" key={el.id}>
                         <img src={el.thumbnail} alt={el.title} />

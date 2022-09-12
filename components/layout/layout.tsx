@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Menu } from "../";
 
 interface ILayout {
     children: JSX.Element;
@@ -14,7 +15,10 @@ const Layout = ({ children }: ILayout) => {
                     content="MMO Gadget helps you to find free MMO games"
                 />
             </Head>
-            <main>{children}</main>
+            <main>
+                <Menu />
+                {children}
+            </main>
         </>
     );
 };
