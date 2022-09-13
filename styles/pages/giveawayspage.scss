@@ -29,7 +29,7 @@
         padding: 0 1rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         margin-bottom: 5rem;
     }
 }
@@ -41,7 +41,7 @@
     margin: 1.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     & img {
         margin: 0 0 2rem 0;

@@ -27,7 +27,7 @@ const Gamecard = ({
                 src={thumbnail}
                 alt={title + " thumbnail-img"}
                 className="gamecard--image"
-                onClick={() => (window.location.pathname = `game/${id}`)}
+                onClick={() => (window.location.pathname = `games/${id}`)}
             />
             <div className="gamecard__contentdiv">
                 <span>
@@ -50,7 +50,7 @@ const Gamecard = ({
                         <Platform platform={platform} />
                     </span>
                     <span className="gamecard--button">
-                        <Link href={`/game/${id}`}>Details</Link>
+                        <Link href={`/games/${id}`}>Details</Link>
                     </span>
                 </div>
             </div>

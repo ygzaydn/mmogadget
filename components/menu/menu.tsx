@@ -34,6 +34,7 @@ const Menu = () => {
             </div>
             <ul className="menu--container">
                 <Link href="/">Home</Link>
+                <Link href="/games">Games</Link>
                 <Link href="/giveaways">Giveaways</Link>
                 <Link href="/news">News</Link>
             </ul>
