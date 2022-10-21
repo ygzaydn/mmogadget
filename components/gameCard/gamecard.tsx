@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { Platform } from "../";
+import { Platform, Button } from "../";
 
 interface IGamecard {
     title: string;
@@ -23,12 +23,14 @@ const Gamecard = ({
 }: IGamecard) => {
     return (
         <div key={title} className="gamecard">
-            <img
-                src={thumbnail}
-                alt={title + " thumbnail-img"}
-                className="gamecard--image"
-                onClick={() => (window.location.pathname = `games/${id}`)}
-            />
+            <a href={`games/${id}`}>
+                <img
+                    src={thumbnail}
+                    alt={title + " thumbnail-img"}
+                    className="gamecard--image"
+                />
+            </a>
+
             <div className="gamecard__contentdiv">
                 <span>
                     <p className="gamecard--text">{title}</p>
@@ -50,7 +52,7 @@ const Gamecard = ({
                         <Platform platform={platform} />
                     </span>
                     <span className="gamecard--button">
-                        <Link href={`/games/${id}`}>Details</Link>
+                        <Button href={`/games/${id}`} text="Details" />
                     </span>
                 </div>
             </div>

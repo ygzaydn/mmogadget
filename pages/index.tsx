@@ -8,8 +8,7 @@ import { getGames } from "../redux/features/gamesSlice";
 import { getNews } from "../redux/features/newsSlice";
 import { getGiveaways } from "../redux/features/giveawaySlice";
 
-import { Gamecard } from "../components";
-import Link from "next/link";
+import { Gamecard, Button, HoverLink } from "../components";
 
 interface IGames {
     id: number;
@@ -130,16 +129,14 @@ const Home = () => {
                 <div className="gamesGrid">
                     <div className="gamesGrid--text">
                         <h2>Games</h2>
-                        <h4
-                            onClick={() =>
-                                (window.location.pathname = "/games")
-                            }
-                        >
-                            Click for more
-                        </h4>
+                        <HoverLink
+                            text="Click for more"
+                            href="/games"
+                            color="primary"
+                        />
                     </div>
                     <div className="gamesGrid--games">
-                        {selector?.slice(0, 5).map((el: IGames) => (
+                        {selector?.slice(0, 4).map((el: IGames) => (
                             <Gamecard
                                 title={el.title}
                                 thumbnail={el.thumbnail}
@@ -152,37 +149,58 @@ const Home = () => {
                             />
                         ))}
                     </div>
+                    <div className="gamesGrid--subtext">
+                        <Button href="/games" text="Browse more games" wider />
+                    </div>
                 </div>
                 <div className="secondColor">
                     <div className="newsGrid">
                         <div className="newsGrid--text">
                             <h2>News</h2>
-                            <h4
-                                onClick={() =>
-                                    (window.location.pathname = "/news")
-                                }
-                            >
-                                Click for more
-                            </h4>
+                            <HoverLink
+                                text="Click for more"
+                                href="/news"
+                                color="secondary"
+                            />
                         </div>
                         <div className="newsGrid--news">
                             {newsSelector?.slice(0, 5).map((el: INews) => (
                                 <div className="giveawayItem" key={el.id}>
-                                    <img
-                                        src={el.thumbnail}
-                                        alt={el.title}
-                                        onClick={() =>
-                                            (window.location.pathname = `news/${el.id}`)
-                                        }
-                                    />
+                                    <a href={`news/${el.id}`}>
+                                        {" "}
+                                        <img
+                                            src={el.thumbnail}
+                                            alt={el.title}
+                                        />
+                                    </a>
                                     <p className="giveawayItem--title">
-                                        {el.title}
+                                        {el.title?.length > 70
+                                            ? el.title.slice(0, 70) + "..."
+                                            : el.title}
                                     </p>
                                     <p className="giveawayItem--description">
-                                        {el.short_description}
+                                        {el.short_description?.length > 70
+                                            ? el.short_description.slice(
+                                                  0,
+                                                  70
+                                              ) + "..."
+                                            : el.short_description}
                                     </p>
+                                    <span style={{ margin: "auto 0 .25rem 0" }}>
+                                        <Button
+                                            href={`news/${el.id}`}
+                                            text="Read More"
+                                        />
+                                    </span>
                                 </div>
                             ))}
+                        </div>
+                        <div className="gamesGrid--subtext">
+                            <Button
+                                href="/news"
+                                text="Browse more news"
+                                wider
+                            />
                         </div>
                     </div>
                 </div>
@@ -190,13 +208,11 @@ const Home = () => {
                 <div className="giveawayGrid">
                     <div className="giveawayGrid--text">
                         <h2>Giveaways</h2>
-                        <h4
-                            onClick={() =>
-                                (window.location.pathname = "/giveaways")
-                            }
-                        >
-                            Click for more
-                        </h4>
+                        <HoverLink
+                            text="Click for more"
+                            href="/giveaways"
+                            color="primary"
+                        />
                     </div>
                     <div className="giveawayGrid--giveaways">
                         {giveawaySelector?.slice(0, 5).map((el: IGiveaway) => (
@@ -209,13 +225,31 @@ const Home = () => {
                                     }
                                 />
                                 <p className="giveawayItem--title">
-                                    {el.title}
+                                    {el.title?.length > 70
+                                        ? el.title.slice(0, 70) + "..."
+                                        : el.title}
                                 </p>
                                 <p className="giveawayItem--description">
-                                    {el.short_description}
+                                    {el.short_description?.length > 70
+                                        ? el.short_description.slice(0, 70) +
+                                          "..."
+                                        : el.short_description}
                                 </p>
+                                <div style={{ margin: "auto 0 .25rem 0" }}>
+                                    <Button
+                                        href={el.giveaway_url || ""}
+                                        text="Obtain Gift"
+                                    />
+                                </div>
                             </div>
                         ))}
+                    </div>
+                    <div className="gamesGrid--subtext">
+                        <Button
+                            href="/giveaways"
+                            text="Browse more giveaways"
+                            wider
+                        />
                     </div>
                 </div>
             </main>

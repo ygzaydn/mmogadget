@@ -20,7 +20,7 @@
         filter: brightness(0.5);
     }
     &--video {
-        max-width: 100vw;
+        max-width: 100%;
         min-height: 100vh;
         object-fit: cover;
     }
@@ -140,6 +140,7 @@
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        margin: 7.5rem auto 0rem auto;
     }
 
     &--gif {
@@ -167,13 +168,11 @@
 .gamesGrid {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
     margin: 5rem auto;
-    min-width: 60vw;
+    width: 90vw;
 
     @media screen and (max-width: 900px) {
         justify-content: center;
-        align-items: center;
     }
 
     &--text {
@@ -186,16 +185,7 @@
             font-size: 3rem;
             font-family: "Rubik Dirt", cursive;
         }
-        & h4 {
-            color: $color-secondary-2;
-            font-size: 1.25rem;
-            line-height: 3rem;
-            cursor: pointer;
-            transition: all 0.4s;
-            &:hover {
-                color: $color-secondary;
-            }
-        }
+
         @media screen and (max-width: 900px) {
             flex-direction: column;
             padding: 1rem 0;
@@ -204,15 +194,22 @@
             }
         }
     }
+
+    &--subtext {
+        margin: auto;
+        padding-top: 4rem;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
     &--games {
         display: flex;
-        height: 20rem;
-        overflow: scroll;
+        flex-wrap: wrap;
+
         scroll-behavior: smooth;
-        max-width: 75vw;
+        justify-content: center;
+
         @media screen and (max-width: 900px) {
-            height: 30rem;
-            max-width: 75vw;
         }
     }
 }
@@ -220,13 +217,11 @@
 .newsGrid {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
     margin: 1rem auto 4rem auto;
-    min-width: 60vw;
+    width: 90vw;
 
     @media screen and (max-width: 900px) {
         justify-content: center;
-        align-items: center;
     }
 
     &--text {
@@ -239,16 +234,6 @@
             font-size: 3rem;
             font-family: "Rubik Dirt", cursive;
         }
-        & h4 {
-            color: $color-light-2;
-            font-size: 1.25rem;
-            line-height: 3rem;
-            cursor: pointer;
-            transition: all 0.4s;
-            &:hover {
-                color: $color-light;
-            }
-        }
         @media screen and (max-width: 900px) {
             flex-direction: column;
             padding: 1rem 0;
@@ -259,11 +244,10 @@
     }
     &--news {
         display: flex;
-        overflow: scroll;
+        overflow-x: auto;
         scroll-behavior: smooth;
-        max-width: 85vw;
+
         @media screen and (max-width: 900px) {
-            max-width: 75vw;
         }
     }
 }
@@ -271,13 +255,12 @@
 .giveawayGrid {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
+
     margin: 1rem auto 10rem auto;
-    min-width: 60vw;
+    width: 90vw;
 
     @media screen and (max-width: 900px) {
         justify-content: center;
-        align-items: center;
     }
 
     &--text {
@@ -290,16 +273,6 @@
             font-size: 3rem;
             font-family: "Rubik Dirt", cursive;
         }
-        & h4 {
-            color: $color-secondary-2;
-            font-size: 1.25rem;
-            line-height: 3rem;
-            cursor: pointer;
-            transition: all 0.4s;
-            &:hover {
-                color: $color-secondary;
-            }
-        }
         @media screen and (max-width: 900px) {
             flex-direction: column;
             padding: 1rem 0;
@@ -310,11 +283,9 @@
     }
     &--giveaways {
         display: flex;
-        overflow: scroll;
+        overflow-x: auto;
         scroll-behavior: smooth;
-        max-width: 85vw;
         @media screen and (max-width: 900px) {
-            max-width: 75vw;
         }
     }
 }

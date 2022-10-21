@@ -1,0 +1,20 @@
+.hoverLink {
+    font-size: 1.25rem;
+    line-height: 3rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s;
+
+    &--primary {
+        color: $color-secondary-2;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+    &--secondary {
+        color: $color-light-2;
+        &:hover {
+            color: $color-light;
+        }
+    }
+}

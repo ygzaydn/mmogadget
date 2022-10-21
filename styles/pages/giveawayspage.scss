@@ -36,53 +36,41 @@
 
 .giveawayItem {
     background-color: $color-primary-2;
-    max-width: 20rem;
+    width: 20rem;
     padding: 1.2rem;
     margin: 1.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+
     & img {
         margin: 0 0 2rem 0;
         height: 10rem;
         width: auto;
         cursor: pointer;
+        transition: all 0.4s;
+        filter: grayscale(0.5);
+        &:hover {
+            filter: grayscale(0);
+        }
     }
+
     & p {
         color: $color-light-2;
         font-size: 0.85rem;
         margin-bottom: 1rem;
     }
     &--title {
-        color: $color-light;
-        margin: 0 0 2rem 0 !important;
-        text-align: center;
-        font-size: 1.5rem !important;
+        color: $color-light !important;
+        margin: 0 0 1.2rem 0 !important;
+        font-size: 1.25rem !important;
     }
     &--description {
         line-height: 1.25rem;
         font-size: 1rem;
+
         &::first-letter {
             padding-left: 0.5rem;
-        }
-    }
-    & a {
-        border: none;
-        text-align: center;
-
-        padding: 0.8rem 3rem;
-        background-color: $color-secondary;
-        color: $color-light-1;
-        border: 0.5px solid $color-secondary;
-        border-radius: 5px;
-        margin: 0 1rem;
-        font-family: inherit;
-        cursor: pointer;
-        transition: all 0.4s;
-        text-decoration: none;
-        &:hover {
-            border: 0.5px solid $color-light;
         }
     }
 }
