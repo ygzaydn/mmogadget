@@ -1,296 +1,300 @@
 .homepageContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    &--navigationBar {
-        padding: 4rem 6rem !important;
-    }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  &--navigationBar {
+    padding: 4rem 6rem !important;
+  }
 }
 
 .landingImage {
-    height: 100vh;
-    -webkit-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
-    -moz-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
-    box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
-    position: relative;
+  height: 100vh;
+  -webkit-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  box-shadow: inset 0px -40px 38px 25px rgba(0, 0, 0, 0.79);
+  position: relative;
 
-    &--image {
-        width: 100%;
-        filter: brightness(0.5);
+  &--image {
+    width: 100%;
+    filter: brightness(0.5);
+  }
+  &--video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &--text {
+    position: absolute;
+    font-family: "Rubik Dirt", cursive;
+    color: $color-light;
+    bottom: 0%;
+    left: 20%;
+    transform: translateX(-50%) translateY(-100%);
+    font-size: 5rem;
+    text-align: center;
+    @media screen and (max-width: 900px) {
+      font-size: 4rem;
+      top: 90%;
+      left: 40%;
     }
-    &--video {
-        max-width: 100%;
-        min-height: 100vh;
-        object-fit: cover;
+  }
+  &--gif {
+    position: relative;
+    height: 6rem;
+    cursor: pointer;
+    left: 95%;
+    transform: translateX(-50%);
+    @media screen and (max-width: 900px) {
+      display: none;
     }
-    &--text {
-        position: absolute;
-        font-family: "Rubik Dirt", cursive;
-        color: $color-light;
-        bottom: 0%;
-        left: 20%;
-        transform: translateX(-50%) translateY(-100%);
-        font-size: 5rem;
-        text-align: center;
-        @media screen and (max-width: 900px) {
-            font-size: 4rem;
-            top: 90%;
-            left: 40%;
-        }
+  }
+  &--subtext {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    @media screen and (max-width: 900px) {
+      display: none;
     }
-    &--gif {
-        position: relative;
-        height: 6rem;
-        cursor: pointer;
-        left: 95%;
-        transform: translateX(-50%);
-        @media screen and (max-width: 900px) {
-            display: none;
-        }
-    }
-    &--subtext {
-        color: white;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 2rem;
-        font-size: 2rem;
-        @media screen and (max-width: 900px) {
-            display: none;
-        }
-    }
-    &--subdiv {
-        position: absolute;
-        width: 100%;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  }
+  &--subdiv {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .flex {
-    display: flex;
-    @media screen and (max-width: 900px) {
-        flex-direction: column;
-    }
+  display: flex;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .gamesContainer {
-    margin: 0 auto 5rem auto;
-    max-width: 1900px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: 0 auto 5rem auto;
+  max-width: 1900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pagesContainer {
-    margin: 2rem auto 4rem auto;
-    & span {
-        font-size: 1.75rem;
-        color: $color-light;
-        transition: all 0.4s;
-    }
-    &--button {
-        background-color: $color-secondary;
-        margin: 0 0.5rem;
-        cursor: pointer;
-        padding: 0 0.5rem;
+  margin: 2rem auto 4rem auto;
+  & span {
+    font-size: 1.75rem;
+    color: $color-light;
+    transition: all 0.4s;
+  }
+  &--button {
+    background-color: $color-secondary;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
 
-        &:hover {
-            color: $color-dark;
-        }
+    &:hover {
+      color: $color-dark;
     }
-    &--page {
-        padding: 0 0.5rem;
-        margin: 0 0.5rem;
-    }
+  }
+  &--page {
+    padding: 0 0.5rem;
+    margin: 0 0.5rem;
+  }
 }
 .buttonContainer {
-    display: flex;
-    max-width: 1440px;
-    margin: 2rem auto 0 auto;
-    justify-content: space-between;
-    & a {
-        border: none;
-        padding: 0.8rem 3rem;
-        background-color: $color-secondary;
-        color: $color-light-1;
-        border: 0.5px solid $color-secondary;
-        border-radius: 5px;
-        margin: 0 1rem;
-        font-family: inherit;
-        cursor: pointer;
-        transition: all 0.4s;
-        font-size: 1rem;
-        text-decoration: none;
-        text-align: center;
-        &:hover {
-            border: 0.5px solid $color-light;
-        }
+  display: flex;
+  max-width: 1440px;
+  margin: 2rem auto 0 auto;
+  justify-content: space-between;
+  & a {
+    border: none;
+    padding: 0.8rem 3rem;
+    background-color: $color-secondary;
+    color: $color-light-1;
+    border: 0.5px solid $color-secondary;
+    border-radius: 5px;
+    margin: 0 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      border: 0.5px solid $color-light;
     }
+  }
 }
 
 .infoGrid {
-    display: flex;
-    max-width: 1440px;
-    margin: 15rem auto 0rem auto;
-    padding: 0 2rem;
+  display: flex;
+  max-width: 1440px;
+  margin: 15rem auto 0rem auto;
+  padding: 0 2rem;
 
-    @media screen and (max-width: 900px) {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        margin: 7.5rem auto 0rem auto;
-    }
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 7.5rem auto 0rem auto;
+  }
 
-    &--gif {
-        width: 25rem;
-        height: auto;
-        border-radius: 20px;
-    }
+  &--gif {
+    width: 25rem;
+    height: auto;
+    border-radius: 20px;
+  }
 
-    &--text {
-        padding: 4rem;
-        & h2 {
-            color: $color-secondary;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            font-family: "Rubik Dirt", cursive;
-        }
-        & h4 {
-            color: $color-light;
-            font-size: 1.25rem;
-            line-height: 3rem;
-        }
+  &--text {
+    padding: 4rem;
+    & h2 {
+      color: $color-secondary;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      font-family: "Rubik Dirt", cursive;
     }
+    & h4 {
+      color: $color-light;
+      font-size: 1.25rem;
+      line-height: 3rem;
+    }
+  }
 }
 
 .gamesGrid {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  width: 90vw;
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+  }
+
+  &--text {
     display: flex;
-    flex-direction: column;
-    margin: 5rem auto;
-    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    & h2 {
+      color: $color-primary;
+      font-size: 3rem;
+      font-family: "Rubik Dirt", cursive;
+    }
 
     @media screen and (max-width: 900px) {
-        justify-content: center;
+      flex-direction: column;
+      padding: 1rem 0;
+      & h2 {
+        margin-bottom: 2rem;
+      }
     }
+  }
 
-    &--text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4rem;
-        & h2 {
-            color: $color-primary;
-            font-size: 3rem;
-            font-family: "Rubik Dirt", cursive;
-        }
+  &--subtext {
+    margin: auto;
+    padding-top: 4rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
 
-        @media screen and (max-width: 900px) {
-            flex-direction: column;
-            padding: 1rem 0;
-            & h2 {
-                margin-bottom: 2rem;
-            }
-        }
+  &--games {
+    display: flex;
+    flex-wrap: wrap;
+
+    scroll-behavior: smooth;
+    justify-content: center;
+
+    @media screen and (max-width: 900px) {
+      flex-wrap: nowrap;
+      overflow: auto;
     }
-
-    &--subtext {
-        margin: auto;
-        padding-top: 4rem;
-        text-align: center;
-        font-size: 1.25rem;
-    }
-
-    &--games {
-        display: flex;
-        flex-wrap: wrap;
-
-        scroll-behavior: smooth;
-        justify-content: center;
-
-        @media screen and (max-width: 900px) {
-        }
-    }
+  }
 }
 
 .newsGrid {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto 4rem auto;
+  width: 90vw;
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+  }
+
+  &--text {
     display: flex;
-    flex-direction: column;
-    margin: 1rem auto 4rem auto;
-    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    & h2 {
+      color: $color-light;
+      font-size: 3rem;
+      font-family: "Rubik Dirt", cursive;
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      padding: 1rem 0;
+      & h2 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &--news {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    justify-content: center;
 
     @media screen and (max-width: 900px) {
-        justify-content: center;
     }
-
-    &--text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem 4rem;
-        & h2 {
-            color: $color-light;
-            font-size: 3rem;
-            font-family: "Rubik Dirt", cursive;
-        }
-        @media screen and (max-width: 900px) {
-            flex-direction: column;
-            padding: 1rem 0;
-            & h2 {
-                margin-bottom: 2rem;
-            }
-        }
-    }
-    &--news {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-
-        @media screen and (max-width: 900px) {
-        }
-    }
+  }
 }
 
 .giveawayGrid {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1rem auto 10rem auto;
+  width: 90vw;
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+  }
+
+  &--text {
     display: flex;
-    flex-direction: column;
-
-    margin: 1rem auto 10rem auto;
-    width: 90vw;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    & h2 {
+      color: $color-primary;
+      font-size: 3rem;
+      font-family: "Rubik Dirt", cursive;
+    }
     @media screen and (max-width: 900px) {
-        justify-content: center;
+      flex-direction: column;
+      padding: 1rem 0;
+      & h2 {
+        margin-bottom: 2rem;
+      }
     }
-
-    &--text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4rem;
-        & h2 {
-            color: $color-primary;
-            font-size: 3rem;
-            font-family: "Rubik Dirt", cursive;
-        }
-        @media screen and (max-width: 900px) {
-            flex-direction: column;
-            padding: 1rem 0;
-            & h2 {
-                margin-bottom: 2rem;
-            }
-        }
+  }
+  &--giveaways {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    justify-content: center;
+    @media screen and (max-width: 900px) {
     }
-    &--giveaways {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        @media screen and (max-width: 900px) {
-        }
-    }
+  }
 }
 
 .secondColor {
-    padding: 2rem;
-    background-color: $color-dark;
+  padding: 2rem;
+  background-color: $color-dark;
 }

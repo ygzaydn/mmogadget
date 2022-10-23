@@ -1,174 +1,177 @@
 .gameDetail {
-    margin: auto;
-    max-width: 90rem;
+  margin: auto;
+  max-width: 90rem;
+  display: flex;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  &--leftGrid {
+    padding: 2rem;
     display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 5%;
+    left: 0;
+    background-color: $color-dark-2;
+    margin: 2rem;
+    height: fit-content;
     @media screen and (max-width: 900px) {
-        flex-direction: column;
+      position: inherit;
+      margin: 2rem auto;
     }
-
-    &--leftGrid {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        position: sticky;
-        top: 5%;
-        left: 0;
-        background-color: $color-dark-2;
-        margin: 2rem;
-        height: fit-content;
-        @media screen and (max-width: 900px) {
-            position: inherit;
-            margin: 2rem auto;
-        }
+  }
+  &--additionalGrid {
+    @media screen and (max-width: 900px) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
-    &--additionalGrid {
-        @media screen and (max-width: 900px) {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        @media screen and (max-width: 500px) {
-            flex-direction: column;
-        }
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
     }
-    &--rightGrid {
-        width: 100%;
-        margin: 4rem 4rem 10rem 4rem;
-        @media screen and (max-width: 900px) {
-            width: auto;
-        }
+  }
+  &--rightGrid {
+    width: 100%;
+    margin: 4rem 4rem 10rem 4rem;
+    @media screen and (max-width: 900px) {
+      width: auto;
     }
-    &--genre {
-        margin: 0 0 1rem 0;
-        & p {
-            width: fit-content;
-        }
-        @media screen and (max-width: 900px) {
-            align-self: center;
-        }
+  }
+  &--genre {
+    margin: 0 0 1rem 0;
+    & p {
+      width: fit-content;
     }
-    &--title {
-        color: $color-secondary;
-        font-size: 2rem;
-        margin-bottom: 2rem;
+    @media screen and (max-width: 900px) {
+      align-self: center;
     }
-    &--navigationBar {
-        span {
-            margin: 0 0.5rem;
-            color: $color-light;
-        }
-        a {
-            text-decoration: none;
-            color: $color-secondary;
-            font-weight: 500;
-            transition: all 0.4s;
-            &:hover {
-                color: $color-light;
-            }
-            @media screen and (max-width: 900px) {
-                font-size: 1.25rem;
-            }
-        }
+  }
+  &--title {
+    color: $color-secondary;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  &--navigationBar {
+    span {
+      margin: 0 0.5rem;
+      color: $color-light;
     }
-    &--thumbnail {
-        margin: auto;
-        margin: 2rem 0;
-        align-self: center;
-    }
-    &--description {
+    a {
+      text-decoration: none;
+      color: $color-secondary;
+      font-weight: 500;
+      transition: all 0.4s;
+      &:hover {
         color: $color-light;
+      }
+      @media screen and (max-width: 900px) {
+        font-size: 1.25rem;
+      }
+      @media screen and (min-width: 2000px) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  &--thumbnail {
+    margin: auto;
+    margin: 2rem 0;
+    align-self: center;
+  }
+  &--description {
+    color: $color-light;
 
-        line-height: 1.75rem;
+    line-height: 1.75rem;
+    & p {
+      margin: 1.5rem 0;
+    }
+    & p::first-letter {
+      margin-left: 1rem;
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 1.15rem;
+    }
+    & a {
+      color: $color-secondary;
+      text-align: center;
+    }
+  }
+  &--minimumSpec {
+    display: flex;
+    flex-direction: column;
+    color: $color-light-2;
+    background-color: $color-dark-2;
+    padding: 0.4rem 0.8rem;
+    @media screen and (max-width: 900px) {
+      max-width: 80vw;
+      align-self: center;
+    }
+
+    &--title {
+      color: $color-light-1;
+      text-align: start;
+      padding: 1rem 0 2rem 0;
+    }
+    &--spec {
+      display: flex;
+      flex-direction: column;
+      & span {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
         & p {
-            margin: 1.5rem 0;
+          margin: 0 1.5rem;
         }
-        & p::first-letter {
-            margin-left: 1rem;
-        }
-        @media screen and (max-width: 900px) {
-            font-size: 1.15rem;
-        }
-        & a {
-            color: $color-secondary;
-            text-align: center;
-        }
+      }
     }
-    &--minimumSpec {
-        display: flex;
-        flex-direction: column;
-        color: $color-light-2;
-        background-color: $color-dark-2;
-        padding: 0.4rem 0.8rem;
-        @media screen and (max-width: 900px) {
-            max-width: 80vw;
-            align-self: center;
-        }
-
-        &--title {
-            color: $color-light-1;
-            text-align: start;
-            padding: 1rem 0 2rem 0;
-        }
-        &--spec {
-            display: flex;
-            flex-direction: column;
-            & span {
-                display: flex;
-                justify-content: space-between;
-                margin: 0.5rem 0;
-                & p {
-                    margin: 0 1.5rem;
-                }
-            }
-        }
+  }
+  &--platform {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    color: $color-light-1;
+    min-width: 20rem;
+    & span {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: space-between;
+      & p {
+        margin: 0.5rem auto;
+      }
     }
-    &--platform {
-        display: flex;
-        justify-content: space-around;
-        margin: 2rem 0;
-        color: $color-light-1;
-        min-width: 20rem;
-        & span {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: space-between;
-            & p {
-                margin: 0.5rem auto;
-            }
-        }
+  }
+  &--additionalInfo {
+    color: $color-light-2;
+    & div {
+      margin: 0.75rem 0;
     }
-    &--additionalInfo {
-        color: $color-light-2;
-        & div {
-            margin: 0.75rem 0;
-        }
+  }
+  &--imageDiv {
+    display: flex;
+    margin: 2rem;
+    padding: 1rem 2rem;
+  }
+  &--image {
+    height: 8rem;
+    margin: 0 0.2rem;
+    width: auto;
+    cursor: pointer;
+    @media screen and (max-width: 900px) {
+      width: 25vw;
+      height: auto;
     }
-    &--imageDiv {
-        display: flex;
-        margin: 2rem;
-        padding: 1rem 2rem;
-    }
-    &--image {
-        height: 8rem;
-        margin: 0 0.2rem;
-        width: auto;
-        cursor: pointer;
-        @media screen and (max-width: 900px) {
-            width: 25vw;
-            height: auto;
-        }
-    }
+  }
 }
 
 .end {
-    text-align: end;
+  text-align: end;
 }
 
 .white {
-    color: $color-light;
+  color: $color-light;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
